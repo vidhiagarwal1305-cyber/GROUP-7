@@ -1,0 +1,18 @@
+import csv
+
+with open("student_performance.csv", "r") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        try:
+            grade = float(row["FinalGrade"])
+            if grade >= 90:
+                category = "A_Grade"
+            elif grade >= 75:
+                category = "B_Grade"
+            elif grade >= 60:
+                category = "C_Grade"
+            else:
+                category = "D_Grade"
+            print(category + "\t" + "1")
+        except:
+            pass

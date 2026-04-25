@@ -1,0 +1,9 @@
+import csv
+
+with open("student_performance.csv", "r") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        gender = row["Gender"].strip()
+        grade = row["FinalGrade"].strip()
+        if gender and grade:
+            print(gender + "\t" + grade)
